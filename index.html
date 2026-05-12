@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Claim Offer - OneScreen</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS (via CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Lucide Icons (via CDN) -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        os: {
+                            purple: '#6F3393',
+                            green: '#82C341',
+                            darkGray: '#333333',
+                            purpleLight: '#F8F0FC',
+                            bgGray: '#FAFAFA'
+                        }
+                    },
+                    fontFamily: {
+                        body: ['Mulish', 'sans-serif'],
+                        heading: ['Poppins', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="flex flex-col min-h-screen items-center justify-center antialiased selection:bg-os-purpleLight selection:text-os-purple bg-os-bgGray relative p-6 sm:p-12 overflow-hidden">
+    
+    <!-- Decorative background gradient overlay -->
+    <div class="absolute top-0 left-0 w-full h-full opacity-10 bg-[linear-gradient(135deg,#6F3393_0%,#9500DE_100%)] pointer-events-none"></div>
+
+    <!-- Main Content Container -->
+    <div class="w-full max-w-md flex flex-col items-center z-10 relative">
+        
+        <!-- Logo -->
+        <img 
+            src="image_9c75a3.png" 
+            onerror="this.onerror=null; this.src='https://placehold.co/400x120/FAFAFA/6F3393?text=OneScreen+Logo&font=Poppins';"
+            alt="OneScreen Logo" 
+            class="w-48 md:w-56 mb-8 object-contain"
+        >
+
+        <!-- Action Card -->
+        <div class="w-full bg-white p-8 md:p-10 rounded-[2rem] shadow-2xl transform transition-transform hover:scale-[1.02] duration-500 border border-gray-100 flex flex-col items-center relative">
+            
+            <!-- Floating Icon -->
+            <div class="absolute -top-6 bg-white rounded-full p-4 shadow-xl border border-gray-100 text-os-green">
+                <i data-lucide="message-square-text" class="w-8 h-8"></i>
+            </div>
+            
+            <h1 class="text-3xl font-heading font-extrabold mt-4 mb-2 text-os-darkGray text-center">
+                Claim Offer
+            </h1>
+            
+            <p class="text-lg font-body font-semibold text-os-purple mb-8 text-center bg-os-purpleLight px-5 py-2 rounded-xl border border-[#ebdff2]">
+                We contact via SMS
+            </p>
+
+            <!-- QR Code Area -->
+            <div class="w-full flex items-center justify-center bg-white rounded-2xl border-2 border-dashed border-gray-200 overflow-hidden p-6 mb-8 hover:border-os-purple transition-colors duration-300">
+                <img 
+                    src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=sms%3A%2B18449915215%3Fbody%3D%20&color=333333&bgcolor=FFFFFF" 
+                    alt="Scan to send an SMS to +1 844 991 5215" 
+                    class="w-48 h-48 md:w-56 md:h-56 object-contain drop-shadow-md"
+                />
+            </div>
+            
+            <!-- Direct Link Button -->
+            <a 
+                href="sms:+18449915215" 
+                class="w-full flex items-center justify-center gap-3 bg-os-purple text-white text-lg font-heading font-bold py-4 px-8 rounded-xl shadow-lg hover:bg-[#5a2878] hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 active:scale-95 focus:outline-none focus:ring-4 focus:ring-os-purpleLight"
+            >
+                <i data-lucide="message-circle" class="w-6 h-6"></i>
+                Claim offer
+            </a>
+            
+            <p class="text-sm text-center text-gray-400 mt-5 font-body">
+                Standard message and data rates may apply.
+            </p>
+        </div>
+    </div>
+
+    <!-- Initialize Icons -->
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
